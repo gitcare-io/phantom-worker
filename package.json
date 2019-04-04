@@ -1,0 +1,25 @@
+{
+  "name": "phantom-workers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitcare-io/phantom-workers.git"
+  },
+  "author": "perzanko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitcare-io/phantom-workers/issues"
+  },
+  "homepage": "https://github.com/gitcare-io/phantom-workers#readme",
+  "dependencies": {,
+    "config": "^3.0.1",
+    "node-cron": "^2.0.3",
+    "puppeteer": "^1.14.0",
+    "randomstring": "^1.1.5"
+  }
+}
