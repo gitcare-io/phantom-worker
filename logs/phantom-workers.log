@@ -1,18 +1,29 @@
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"Running...","time":"2019-04-06T14:12:35.399Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] task: create_and_merge_pr, cron: * * * * *","time":"2019-04-06T14:12:35.399Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #2] task: create_and_merge_pr, cron: 0-59/30 * * * *","time":"2019-04-06T14:12:35.402Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr p: 30%","time":"2019-04-06T14:13:00.003Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: launched","time":"2019-04-06T14:13:00.139Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: authenticated","time":"2019-04-06T14:13:09.033Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to file edit page","time":"2019-04-06T14:13:09.962Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: added content","time":"2019-04-06T14:13:11.976Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: submited file","time":"2019-04-06T14:13:14.995Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to open pull request page","time":"2019-04-06T14:13:22.998Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: created pull request","time":"2019-04-06T14:13:26.063Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: merged pull request","time":"2019-04-06T14:13:32.074Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: logout","time":"2019-04-06T14:13:43.564Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr p: 30%","time":"2019-04-06T14:14:00.002Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr p: 30%","time":"2019-04-06T14:15:00.002Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34049,"level":30,"msg":"Running...","time":"2019-04-06T14:38:51.289Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34049,"level":30,"msg":"[Worker #1] task: create_and_merge_pr, cron: 2-59/30 * * * *, p: 30%","time":"2019-04-06T14:38:51.290Z","v":0}
-{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34049,"level":30,"msg":"[Worker #2] task: create_and_merge_pr, cron: 0-59/30 * * * *, p: 30%","time":"2019-04-06T14:38:51.292Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34753,"level":30,"msg":"Running...","time":"2019-04-06T15:55:37.466Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34753,"level":30,"msg":"[Worker #1] task: create_and_merge_pr, cron: 0,30 * * * *, p: 30%","time":"2019-04-06T15:55:37.467Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34753,"level":30,"msg":"[Worker #2] task: create_and_merge_pr, cron: 15,45 * * * *, p: 30%","time":"2019-04-06T15:55:37.469Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"Running...","time":"2019-04-06T15:58:51.991Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] task: create_and_merge_pr, cron: * * * * *, p: 30%","time":"2019-04-06T15:58:51.991Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #2] task: create_and_merge_pr, cron: 15,45 * * * *, p: 30%","time":"2019-04-06T15:58:51.994Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr","time":"2019-04-06T15:59:00.003Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: launched","time":"2019-04-06T15:59:00.136Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: authenticated","time":"2019-04-06T15:59:09.008Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to file edit page","time":"2019-04-06T15:59:09.878Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: added content","time":"2019-04-06T15:59:11.889Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: submited file","time":"2019-04-06T15:59:14.909Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to open pull request page","time":"2019-04-06T15:59:22.910Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":50,"err":{"message":"No node found for selector: #pull_request_body","name":"Error","stack":"Error: No node found for selector: #pull_request_body\n    at assert (/Users/perzanko/Workspace/private/projects/gitcare/phantom-workers/node_modules/puppeteer/lib/helper.js:231:11)\n    at DOMWorld.type (/Users/perzanko/Workspace/private/projects/gitcare/phantom-workers/node_modules/puppeteer/lib/DOMWorld.js:426:5)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/perzanko/Workspace/private/projects/gitcare/phantom-workers/node_modules/puppeteer/lib/helper.js:110:27)\n    at Page.type (/Users/perzanko/Workspace/private/projects/gitcare/phantom-workers/node_modules/puppeteer/lib/Page.js:1054:29)\n    at PhantomWorker.createAndMergePR (/Users/perzanko/Workspace/private/projects/gitcare/phantom-workers/src/PhantomWorker.js:52:21)"},"msg":"No node found for selector: #pull_request_body","time":"2019-04-06T15:59:22.914Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr","time":"2019-04-06T16:00:00.002Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: launched","time":"2019-04-06T16:00:00.123Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: authenticated","time":"2019-04-06T16:00:09.373Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to file edit page","time":"2019-04-06T16:00:10.476Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: added content","time":"2019-04-06T16:00:12.488Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: submited file","time":"2019-04-06T16:00:15.508Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to open pull request page","time":"2019-04-06T16:00:23.510Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: created pull request","time":"2019-04-06T16:00:26.911Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: merged pull request","time":"2019-04-06T16:00:32.920Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: logout","time":"2019-04-06T16:00:44.552Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr","time":"2019-04-06T16:01:00.003Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: launched","time":"2019-04-06T16:01:00.129Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: authenticated","time":"2019-04-06T16:01:09.044Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: went to file edit page","time":"2019-04-06T16:01:10.193Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34900,"level":30,"msg":"[Worker #1] create_and_merge_pr: added content","time":"2019-04-06T16:01:12.204Z","v":0}

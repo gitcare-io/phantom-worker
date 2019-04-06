@@ -19,9 +19,11 @@ workers.forEach(({ tasks }, i) => {
         const randomizer = new Randomizer();
         logger.info(`[Worker #${num}]`, task.name);
         const shouldBeInvoked = randomizer.getProbabilityResult(task.probability);
-        return shouldBeInvoked
-          ? await phantomWorker.resolveTask(task.name)
-          : logger.info(`[Worker #${num}] omitted`);
+        if (shouldBeInvoked) {
+          await phantomWorker.resolveTask(task.name)
+        } else {
+          logger.info(`[Worker #${num}] omitted`);
+        }
       } catch (error) {
         logger.error(error);
       }

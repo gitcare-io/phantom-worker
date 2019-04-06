@@ -15,9 +15,9 @@ class PhantomWorker {
     this.task = name;
     switch (name) {
       case 'create_and_merge_pr':
-        return this.createAndMergePR.bind(this);
+        return this.createAndMergePR();
       default:
-        return () => {};
+        return;
     }
   }
 
