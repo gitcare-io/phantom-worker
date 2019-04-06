@@ -7,4 +7,4 @@ RUN npm install
 
 ADD . /app
 
-EXPOSE $PORT
+# EXPOSE $PORT
