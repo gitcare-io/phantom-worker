@@ -1,3 +1,5 @@
+const express = require('express');
+const app = express();
 const cron = require('node-cron');
 const config = require('config');
 const PhantomWorker = require('./src/PhantomWorker');
@@ -23,3 +25,7 @@ workers.forEach(({ tasks }, i) => {
     });
   })
 })
+
+app.get('/', (_req, res) => res.send(workers));
+
+app.listen(process.env.PORT || 3000);
