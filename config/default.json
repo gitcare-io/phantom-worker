@@ -13,7 +13,7 @@
       "tasks": [{
         "probability": 30,
         "name": "create_and_merge_pr",
-        "schedule": "2-59/30 * * * *"
+        "schedule": "0,30 * * * *"
       }]
     },
     {
@@ -25,7 +25,7 @@
       "tasks": [{
         "probability": 30,
         "name": "create_and_merge_pr",
-        "schedule": "0-59/30 * * * *"
+        "schedule": "15,45 * * * *"
       }]
     }
   ]
