@@ -68,7 +68,12 @@ class PhantomWorker {
   // private
 
   async launch() {
-    this.browser = await(await puppeteer.launch()).createIncognitoBrowserContext();
+    this.browser = await(await puppeteer.launch({
+      args : [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ]
+    })).createIncognitoBrowserContext();
     logger.info(`[Worker #${this.num}] ${this.task}: launched`)
   }
 
