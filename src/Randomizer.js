@@ -1,12 +1,10 @@
 module.exports = class Randomizer {
   constructor() {}
 
-  async invokeWithProbability(percent = 50, func) {
+  async getProbabilityResult(percent = 50, func) {
     if (typeof func !== 'function') return;
     const randomNumber = this.getRandomNumberBeetween(0, 100);
-    if (randomNumber <= percent) {
-      await func();
-    }
+    return randomNumber <= percent
   }
 
   getRandomNumberBeetween(start = 0, end = 100) {

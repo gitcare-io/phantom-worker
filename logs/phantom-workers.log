@@ -13,3 +13,6 @@
 {"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr: logout","time":"2019-04-06T14:13:43.564Z","v":0}
 {"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr p: 30%","time":"2019-04-06T14:14:00.002Z","v":0}
 {"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":33291,"level":30,"msg":"[Worker #1] create_and_merge_pr p: 30%","time":"2019-04-06T14:15:00.002Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34049,"level":30,"msg":"Running...","time":"2019-04-06T14:38:51.289Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34049,"level":30,"msg":"[Worker #1] task: create_and_merge_pr, cron: 2-59/30 * * * *, p: 30%","time":"2019-04-06T14:38:51.290Z","v":0}
+{"name":"phantom-workers","hostname":"MacBook-Pro-Kacper.local","pid":34049,"level":30,"msg":"[Worker #2] task: create_and_merge_pr, cron: 0-59/30 * * * *, p: 30%","time":"2019-04-06T14:38:51.292Z","v":0}

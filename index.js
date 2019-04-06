@@ -18,7 +18,10 @@ workers.forEach(({ tasks }, i) => {
         const phantomWorker = new PhantomWorker(num);
         const randomizer = new Randomizer();
         logger.info(`[Worker #${num}]`, task.name);
-        await randomizer.invokeWithProbability(task.probability, phantomWorker.resolveTask(task.name))
+        const shouldBeInvoked = randomizer.getProbabilityResult(task.probability);
+        return shouldBeInvoked
+          ? await phantomWorker.resolveTask(task.name)
+          : logger.info(`[Worker #${num}] omitted`);
       } catch (error) {
         logger.error(error);
       }
@@ -26,6 +29,6 @@ workers.forEach(({ tasks }, i) => {
   })
 })
 
-app.get('/', (_req, res) => res.send(workers));
+app.get('/', (_req, res) => res.send(workers.map(x => ({ ...x, authentication: undefined }))));
 
 app.listen(process.env.PORT || 3000);
