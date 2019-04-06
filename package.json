@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2-runtime start index.js -i 1"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,11 @@
     "url": "https://github.com/gitcare-io/phantom-workers/issues"
   },
   "homepage": "https://github.com/gitcare-io/phantom-workers#readme",
-  "dependencies": {,
+  "dependencies": {
+    "bunyan": "^1.8.12",
     "config": "^3.0.1",
     "node-cron": "^2.0.3",
+    "pm2": "^3.4.1",
     "puppeteer": "^1.14.0",
     "randomstring": "^1.1.5"
   }

@@ -4,24 +4,30 @@
     "logout_url": "https://github.com/logout",
     "factory_repo_url": "https://github.com/gitcare-io/phantom-factory"
   },
-  "worker1": {
-    "factory_repo_file_url": "https://github.com/gitcare-io/phantom-factory/edit/master/phantom-worker-1.txt",
-    "authentication": {
-      "user": "phantom-worker1",
-      "password": "gitcare2019"
+  "workers": [{
+      "factory_repo_file_url": "https://github.com/gitcare-io/phantom-factory/edit/master/phantom-worker-1.txt",
+      "authentication": {
+        "user": "phantom-worker1",
+        "password": "gitcare2019"
+      },
+      "tasks": [{
+        "probability": 30,
+        "name": "create_and_merge_pr",
+        // "schedule": "2-59/30 * * * *"
+        "schedule": "* * * * *"
+      }]
     },
-    "task": {
-      "create_and_merge_pr": "2-59/30 * * * *"
+    {
+      "factory_repo_file_url": "https://github.com/gitcare-io/phantom-factory/edit/master/phantom-worker-2.txt",
+      "authentication": {
+        "user": "phantom-worker2",
+        "password": "gitcare2019"
+      },
+      "tasks": [{
+        "probability": 30,
+        "name": "create_and_merge_pr",
+        "schedule": "0-59/30 * * * *"
+      }]
     }
-  },
-  "worker2": {
-    "factory_repo_file_url": "https://github.com/gitcare-io/phantom-factory/edit/master/phantom-worker-2.txt",
-    "authentication": {
-      "user": "phantom-worker2",
-      "password": "gitcare2019"
-    },
-    "task": {
-      "create_and_merge_pr": "0-59/30 * * * *"
-    }
-  }
+  ]
 }

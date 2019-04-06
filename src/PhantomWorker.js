@@ -1,37 +1,33 @@
 const puppeteer = require('puppeteer');
 const config = require('config');
 const randomstring = require('randomstring');
+const logger = require('./Logger');
 
 class PhantomWorker {
   constructor(num) {
     this.num = num;
     this.browser = null;
     this.page = null;
+    this.workerConfig = config.get('workers')[num - 1];
   }
 
-  async launch() {
-    this.browser = await(await puppeteer.launch()).createIncognitoBrowserContext();
-    return this.browser;
-  }
-
-  async authenticate() {
-    if (!this.browser) return;
-    this.page = await this.browser.newPage();
-    await this.page.waitFor(1000);
-    await this.page.goto(config.get('github.login_url'));
-    await this.page.type('#login_field', config.get(`worker${this.num}.authentication.user`));
-    await this.page.type('#password', config.get(`worker${this.num}.authentication.password`));
-    await this.page.waitFor(1000);
-    await this.page.click('#login input[type="submit"]');
-    await this.page.waitForNavigation();
+  resolveTask(name) {
+    this.task = name;
+    switch (name) {
+      case 'create_and_merge_pr':
+        return this.createAndMergePR.bind(this);
+      default:
+        return () => {};
+    }
   }
 
   async createAndMergePR() {
     await this.launch();
     await this.authenticate();
     this.page = await this.browser.newPage();
-    await this.page.goto(config.get(`worker${this.num}.factory_repo_file_url`));
-    await this.page.waitFor(1000);
+    await this.page.goto(this.workerConfig.factory_repo_file_url);
+    logger.info(`[Worker #${this.num}] ${this.task}: went to file edit page`)
+    await this.page.waitFor(2000);
     await this.page.evaluate((content) => {
       const simulateClick = (elem) => {
         const evt = new MouseEvent('click', {
@@ -47,26 +43,48 @@ class PhantomWorker {
       simulateClick(document.querySelectorAll('input[name="commit-choice"]')[1])
       return Promise.resolve()
     }, randomstring.generate(Math.floor(Math.random() * 100) + 10))
-    await this.page.waitFor(500);
+    logger.info(`[Worker #${this.num}] ${this.task}: added content`)
+    await this.page.waitFor(3000);
     await this.page.click('#submit-file');
-    await this.page.waitForNavigation();
-    await this.page.waitForSelector('#pull_request_body');
-    await this.page.type('#pull_request_body', randomstring.generate(Math.floor(Math.random() * 300) + 10));
+    logger.info(`[Worker #${this.num}] ${this.task}: submited file`)
+    await this.page.waitFor(8000);
+    logger.info(`[Worker #${this.num}] ${this.task}: went to open pull request page`)
+    await this.page.type('#pull_request_body', randomstring.generate(Math.floor(Math.random() * 300) + 100));
     await this.page.click('.new-pr-form button[type="submit"]');
-    await this.page.waitForNavigation();
-    await this.page.waitFor(4000);
+    logger.info(`[Worker #${this.num}] ${this.task}: created pull request`)
+    await this.page.waitFor(6000);
     await this.page.evaluate(() => {
       document.querySelector('.btn-group-merge > button').click();
       setTimeout(() => {
         document.querySelector('.commit-form-actions .js-merge-commit-button').click();
         return Promise.resolve()
-      }, 300);
+      }, 500);
     });
+    logger.info(`[Worker #${this.num}] ${this.task}: merged pull request`)
+    await this.page.waitFor(6000);
     await this.logout();
   }
 
+  // private
+
+  async launch() {
+    this.browser = await(await puppeteer.launch()).createIncognitoBrowserContext();
+    logger.info(`[Worker #${this.num}] ${this.task}: launched`)
+  }
+
+  async authenticate() {
+    this.page = await this.browser.newPage();
+    await this.page.waitFor(1000);
+    await this.page.goto(config.get('github.login_url'));
+    await this.page.type('#login_field', this.workerConfig.authentication.user);
+    await this.page.type('#password', this.workerConfig.authentication.password);
+    await this.page.waitFor(1000);
+    await this.page.click('#login input[type="submit"]');
+    await this.page.waitFor(6000);
+    logger.info(`[Worker #${this.num}] ${this.task}: authenticated`)
+  }
+
   async logout() {
-    if (!this.browser) return;
     this.page = await this.browser.newPage();
     await this.page.goto(config.get('github.logout_url'));
     await this.page.waitFor(5000);
@@ -75,6 +93,7 @@ class PhantomWorker {
       return Promise.resolve()
     })
     await this.browser.close();
+    logger.info(`[Worker #${this.num}] ${this.task}: logout`)
   }
 }
 
