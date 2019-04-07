@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2-runtime start index.js -i 1"
+    "start": "pm2-runtime start index.js -i 1",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "pm2": "^3.4.1",
     "puppeteer": "^1.14.0",
     "randomstring": "^1.1.5"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1"
   }
 }

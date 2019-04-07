@@ -1,7 +1,7 @@
 module.exports = class Randomizer {
   constructor() {}
 
-  async getProbabilityResult(percent = 50) {
+  getProbabilityResult(percent = 50) {
     const randomNumber = this.getRandomNumberBeetween(0, 100);
     return randomNumber <= percent
   }
