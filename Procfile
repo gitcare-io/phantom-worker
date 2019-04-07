@@ -1,1 +1,1 @@
-web: npm start
+web: ./node_modules/.bin/pm2-runtime start index.js -i 1
