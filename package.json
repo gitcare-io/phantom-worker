@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/gitcare-io/phantom-workers/issues"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "homepage": "https://github.com/gitcare-io/phantom-workers#readme",
   "dependencies": {
     "bunyan": "^1.8.12",
