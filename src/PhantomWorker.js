@@ -25,7 +25,6 @@ class PhantomWorker {
     try {
       await this.launch();
       await this.authenticate();
-      this.page = await this.browser.newPage();
       await this.page.goto(this.workerConfig.factory_repo_file_url);
       logger.info(`[Worker #${this.num}] ${this.task}: went to file edit page`)
       await this.page.waitFor(2000);
@@ -66,6 +65,7 @@ class PhantomWorker {
       await this.logout();
       await this.close();
     } catch (error) {
+      logger.error(error);
       await this.close();
     }
   }
@@ -73,21 +73,26 @@ class PhantomWorker {
   // private
 
   async launch() {
-    this.browser = await(await puppeteer.launch({
+    this.browserBase = await(await puppeteer.launch({
+      headless: true,
       args : [
         '--no-sandbox',
         '--disable-setuid-sandbox'
       ]
-    })).createIncognitoBrowserContext();
+    }));
+    this.browser = await this.browserBase.createIncognitoBrowserContext();
+    this.page = await this.browser.newPage();
     logger.info(`[Worker #${this.num}] ${this.task}: launched`)
   }
 
   async close() {
-    await this.browser.close();
+    await this.page.close();
+    this.browser ? await this.browser.close() : null;
+    this.browserBase ? await this.browserBase.close() : null;
+    logger.info(`[Worker #${this.num}] ${this.task}: closed`)
   }
 
   async authenticate() {
-    this.page = await this.browser.newPage();
     await this.page.waitFor(1000);
     await this.page.goto(config.get('github.login_url'));
     await this.page.type('#login_field', this.workerConfig.authentication.user);
@@ -99,7 +104,6 @@ class PhantomWorker {
   }
 
   async logout() {
-    this.page = await this.browser.newPage();
     await this.page.goto(config.get('github.logout_url'));
     await this.page.waitFor(5000);
     await this.page.evaluate(() => {
