@@ -65,7 +65,7 @@ class PhantomWorker {
       await this.logout();
       await this.close();
     } catch (error) {
-      logger.error(error);
+      console.error(error);
       await this.close();
     }
   }

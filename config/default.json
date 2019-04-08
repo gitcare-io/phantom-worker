@@ -11,9 +11,10 @@
         "password": "gitcare2019"
       },
       "tasks": [{
-        "probability": 30,
+        "probability": 100,
         "name": "create_and_merge_pr",
-        "schedule": "0,20,40 * * * *"
+        // "schedule": "0,20,40 * * * *"
+        "schedule": "* * * * *"
       }]
     },
     {
